@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suraj Kumar — Solution Architect, Gurgaon</title>
+<meta name="description" content="Suraj Kumar is a solution architect in Gurgaon. He designs, builds and secures systems end to end: identity and security, cloud, Microsoft 365, ERP integration and AI.">
+<meta property="og:title" content="Suraj Kumar — Solution Architect">
+<meta property="og:description" content="Solution architecture across cybersecurity, cloud, Microsoft 365, ERP integration and AI, designed and built end to end.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23F8FAF8' stroke='%235E3BC4' stroke-width='5'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-weight='700' font-size='24' fill='%235E3BC4'%3ESK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDF0EE;
+    --sheet: #F8FAF8;
+    --ink: #1C2333;
+    --ink-soft: #4A5468;
+    --rule: #C7CED2;
+    --stamp: #5E3BC4;
+    --posted: #1F7F55;
+
+    --wrap: 1180px;
+    --gutter: clamp(20px, 4vw, 48px);
+
+    --t-xs: 0.8125rem;
+    --t-sm: 0.9375rem;
+    --t-md: 1.0625rem;
+    --t-lg: 1.375rem;
+    --t-xl: 2rem;
+    --t-2xl: clamp(2.25rem, 4.6vw, 3.5rem);
+    --t-3xl: clamp(2.5rem, 6vw, 4.75rem);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: var(--t-md);
+    line-height: 1.55;
+    font-variation-settings: "wdth" 100;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--stamp); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .wide { font-variation-settings: "wdth" 125; letter-spacing: -0.01em; }
+  .narrow { font-variation-settings: "wdth" 75; }
+
+  /* ---------- header ---------- */
+  .site-head { padding: 22px 0; }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .mark { font-weight: 800; text-decoration: none; font-size: var(--t-md); font-variation-settings: "wdth" 125; }
+  .site-nav { display: flex; gap: 26px; font-size: var(--t-sm); }
+  .site-nav a { text-decoration: none; color: var(--ink-soft); }
+  .site-nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(32px, 6vw, 72px) 0 clamp(64px, 9vw, 120px); }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+  .hero h1 {
+    font-size: var(--t-3xl);
+    line-height: 0.95;
+    font-weight: 850;
+    margin: 0 0 32px;
+    font-variation-settings: "wdth" 125;
+    letter-spacing: -0.025em;
+  }
+  .hero h1 span { display: block; white-space: nowrap; }
+  .hero h1 .thin { font-weight: 250; font-variation-settings: "wdth" 62; letter-spacing: 0; }
+  .intro { font-size: var(--t-lg); line-height: 1.45; max-width: 34ch; color: var(--ink); margin: 0 0 32px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 20px; font: inherit; font-size: var(--t-sm); font-weight: 650;
+    text-decoration: none; border: 1.5px solid var(--ink); border-radius: 3px; color: var(--ink); background: transparent; cursor: pointer;
+  }
+  .btn.primary { background: var(--ink); color: var(--sheet); }
+  .btn:hover { background: var(--stamp); border-color: var(--stamp); color: #fff; }
+
+  /* the chain: a document moving through approval */
+  .chain {
+    position: relative;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 22px 24px 26px;
+    box-shadow: 0 1px 0 var(--rule), 0 18px 40px -28px rgba(28, 35, 51, 0.45);
+  }
+  .chain-head { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1.5px solid var(--ink); font-size: var(--t-sm); }
+  .chain-head b { font-weight: 700; }
+  .chain-head span { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .chain ol { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .chain li { counter-increment: step; }
+  .chain li a {
+    display: grid; grid-template-columns: 28px 1fr auto; gap: 12px; align-items: baseline;
+    padding: 13px 0; border-bottom: 1px dashed var(--rule); text-decoration: none;
+  }
+  .chain li a::before { content: counter(step); font-weight: 700; font-size: var(--t-xs); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .chain li a:hover .step-name { text-decoration: underline; text-underline-offset: 3px; }
+  .step-name { font-weight: 600; }
+  .step-name small { display: block; font-weight: 400; color: var(--ink-soft); font-size: var(--t-xs); margin-top: 2px; }
+  .status { font-size: var(--t-xs); font-weight: 650; white-space: nowrap; color: var(--ink-soft); }
+  .status::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; border: 1.5px solid currentColor; vertical-align: 0; }
+  .done .status { color: var(--posted); }
+  .done .status::before { background: currentColor; }
+  .chain-foot { display: flex; justify-content: space-between; align-items: end; margin-top: 18px; font-size: var(--t-xs); color: var(--ink-soft); min-height: 64px; }
+  .sign { font-style: italic; font-weight: 300; font-size: var(--t-lg); color: var(--ink); font-variation-settings: "wdth" 62; border-bottom: 1px solid var(--ink); padding: 0 22px 2px 2px; }
+
+  .seal {
+    position: absolute; right: 118px; bottom: -40px; width: 150px; height: 150px;
+    color: var(--stamp); transform: rotate(-14deg); pointer-events: none; mix-blend-mode: multiply;
+  }
+  .seal svg { width: 100%; height: 100%; display: block; }
+  .seal text { font-family: "Archivo", sans-serif; font-weight: 700; font-variation-settings: "wdth" 110; fill: currentColor; }
+
+  .js .chain li .status { visibility: hidden; }
+  .js .chain li.done .status, .js .chain li.waiting .status { visibility: visible; }
+  .js .seal { opacity: 0; }
+  .js .seal.landed { animation: stamp 420ms cubic-bezier(.2, 1.4, .4, 1) forwards; }
+  @keyframes stamp {
+    0% { opacity: 0; transform: rotate(-14deg) scale(1.9); }
+    60% { opacity: 0.95; }
+    100% { opacity: 0.88; transform: rotate(-14deg) scale(1); }
+  }
+
+  /* ---------- section shells ---------- */
+  section { scroll-margin-top: 20px; }
+  .block { padding: clamp(56px, 8vw, 104px) 0; border-top: 1.5px solid var(--ink); }
+  .block-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; margin-bottom: clamp(36px, 5vw, 64px); align-items: end; }
+  .block-head h2 { font-size: var(--t-2xl); line-height: 1; margin: 0; font-weight: 800; font-variation-settings: "wdth" 125; letter-spacing: -0.02em; }
+  .block-head p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
+
+  /* ---------- featured work ---------- */
+  .case { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); padding: 48px 0; border-top: 1px solid var(--rule); }
+  .case:first-of-type { border-top: 0; padding-top: 0; }
+  .meta { font-size: var(--t-sm); color: var(--ink-soft); }
+  .meta dl { margin: 0; display: grid; gap: 14px; }
+  .meta dt { font-weight: 650; color: var(--ink); font-size: var(--t-xs); }
+  .meta dd { margin: 2px 0 0; }
+  .case h3 { font-size: var(--t-xl); line-height: 1.1; margin: 0 0 10px; font-weight: 800; font-variation-settings: "wdth" 112; letter-spacing: -0.01em; }
+  .case .lede { font-size: var(--t-lg); line-height: 1.4; margin: 0 0 24px; max-width: 46ch; }
+  .case p { max-width: 64ch; }
+  .points { margin: 0 0 24px; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; }
+  .points li { padding-left: 18px; position: relative; font-size: var(--t-sm); max-width: 48ch; }
+  .points li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 1.5px; background: var(--ink); }
+  .points b { font-weight: 650; }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .stack li { font-size: var(--t-xs); padding: 3px 9px; border: 1px solid var(--rule); border-radius: 20px; background: var(--sheet); }
+
+  /* lead case gets the ledger */
+  .case.lead { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: clamp(24px, 4vw, 48px); margin-bottom: 24px; }
+  .case.lead h3 { font-size: var(--t-2xl); }
+  .ledger { width: 100%; border-collapse: collapse; margin: 8px 0 28px; font-variant-numeric: tabular-nums; font-size: var(--t-sm); }
+  .ledger caption { text-align: left; font-weight: 650; padding-bottom: 8px; font-size: var(--t-xs); color: var(--ink-soft); }
+  .ledger th, .ledger td { padding: 9px 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
+  .ledger td { text-align: right; font-weight: 700; font-size: var(--t-md); font-variation-settings: "wdth" 115; }
+  .ledger tr:last-child th, .ledger tr:last-child td { border-bottom: 1.5px solid var(--ink); }
+  .ledger-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 40px; }
+  .note { font-size: var(--t-xs); color: var(--ink-soft); margin: 0 0 20px; }
+
+  /* procure-to-pay sequence */
+  .p2p { list-style: none; margin: 4px 0 28px; padding: 0; display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 16px 10px; counter-reset: p2p; font-size: var(--t-xs); line-height: 1.3; }
+  .p2p li { counter-increment: p2p; padding-top: 8px; border-top: 2px solid var(--ink); }
+  .p2p li::before { content: counter(p2p); display: block; font-weight: 750; color: var(--stamp); margin-bottom: 2px; }
+  .p2p li:last-child { border-color: var(--posted); }
+
+  /* ---------- project index ---------- */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .filters button {
+    font: inherit; font-size: var(--t-sm); padding: 7px 14px; border-radius: 20px; cursor: pointer;
+    border: 1px solid var(--rule); background: transparent; color: var(--ink);
+  }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
+  .filters button:hover { border-color: var(--ink); }
+  .index { border-top: 1.5px solid var(--ink); }
+  .row { border-bottom: 1px solid var(--rule); }
+  .row[hidden] { display: none; }
+  .row-btn {
+    width: 100%; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr) 150px 56px 24px; gap: 20px; align-items: baseline;
+    text-align: left; font: inherit; color: inherit; background: none; border: 0; padding: 18px 0; cursor: pointer;
+  }
+  .row-btn:hover .row-name { text-decoration: underline; text-underline-offset: 3px; }
+  .row-name { font-weight: 700; font-size: var(--t-md); }
+  .row-what { color: var(--ink-soft); font-size: var(--t-sm); }
+  .row-area, .row-year { font-size: var(--t-xs); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .plus { width: 14px; height: 14px; position: relative; justify-self: end; align-self: center; }
+  .plus::before, .plus::after { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; background: var(--ink); transition: transform 200ms ease; }
+  .plus::after { transform: rotate(90deg); }
+  .row-btn[aria-expanded="true"] .plus::after { transform: rotate(0deg); }
+  .row-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: 20px; padding: 0 0 24px; }
+  .row-body[hidden] { display: none; }
+  .row-body ul.points { grid-template-columns: 1fr; margin-bottom: 16px; }
+  .live { font-size: var(--t-sm); font-weight: 650; color: var(--stamp); }
+  .live-tag { font-size: var(--t-xs); font-weight: 650; color: var(--posted); margin-left: 8px; }
+  .proto-tag { font-size: var(--t-xs); font-weight: 500; color: var(--ink-soft); margin-left: 8px; }
+
+  /* ---------- focus ---------- */
+  .focus { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; }
+  .focus.four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
+  .focus li { border-top: 1.5px solid var(--ink); padding-top: 16px; display: flex; flex-direction: column; }
+  .focus h3 { font-size: var(--t-md); line-height: 1.2; margin: 0 0 10px; font-weight: 800; font-variation-settings: "wdth" 112; }
+  .focus p { margin: 0 0 16px; font-size: var(--t-sm); color: var(--ink-soft); flex: 1; }
+  .focus a { font-size: var(--t-sm); font-weight: 650; color: var(--stamp); text-underline-offset: 3px; }
+
+  /* ---------- security record ---------- */
+  .record { width: 100%; border-collapse: collapse; border-top: 1.5px solid var(--ink); }
+  .record th, .record td { text-align: left; vertical-align: baseline; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .record th { width: 28%; padding-right: 24px; font-size: var(--t-xl); line-height: 1.05; font-weight: 800; font-variation-settings: "wdth" 120; letter-spacing: -0.01em; }
+  .record td { font-size: var(--t-md); max-width: 60ch; padding-right: 24px; }
+  .record td + td { width: 22%; font-size: var(--t-xs); color: var(--ink-soft); padding-right: 0; }
+  .record tr:first-child th { color: var(--stamp); }
+
+  /* ---------- skills ---------- */
+  .skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 40px; }
+  .skills h3 { font-size: var(--t-md); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1.5px solid var(--ink); font-weight: 750; }
+  .skills ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: var(--t-sm); }
+  .skills li span { color: var(--ink-soft); }
+
+  /* ---------- path ---------- */
+  .path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
+  .path li { padding: 18px 24px 0 0; border-top: 2px solid var(--rule); position: relative; }
+  .path li::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink); }
+  .path li.now { border-top-color: var(--stamp); }
+  .path li.now::before { background: var(--stamp); border-color: var(--stamp); }
+  .path time { font-weight: 650; font-size: var(--t-xs); color: var(--ink-soft); display: block; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+  .path h3 { font-size: var(--t-md); line-height: 1.2; margin: 0 0 4px; font-weight: 800; font-variation-settings: "wdth" 110; }
+  .path .org { margin: 0 0 12px; font-size: var(--t-sm); font-weight: 600; }
+  .path ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .path ul li { padding: 0 0 0 14px; border: 0; font-size: var(--t-sm); color: var(--ink-soft); max-width: 34ch; }
+  .path ul li::before, .path li.now ul li::before { top: 0.62em; left: 0; width: 6px; height: 1.5px; border: 0; border-radius: 0; background: var(--ink-soft); }
+  .creds { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-top: clamp(48px, 7vw, 88px); }
+  .creds h3 { font-size: var(--t-md); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1.5px solid var(--ink); font-weight: 750; }
+  .creds ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: var(--t-sm); }
+  .creds li span { display: block; color: var(--ink-soft); font-size: var(--t-xs); }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--ink); color: var(--sheet); padding: clamp(64px, 10vw, 128px) 0 40px; }
+  .contact h2 { font-size: var(--t-2xl); margin: 0 0 20px; font-weight: 800; font-variation-settings: "wdth" 125; letter-spacing: -0.02em; line-height: 1; }
+  .contact p { max-width: 48ch; color: #C3CAD8; margin: 0 0 36px; }
+  .mail { display: inline-block; font-size: clamp(1.4rem, 4.2vw, 3rem); font-weight: 300; font-variation-settings: "wdth" 70; text-decoration: none; border-bottom: 2px solid var(--stamp); padding-bottom: 4px; word-break: break-all; }
+  .mail:hover { color: #B9A8F2; }
+  .elsewhere { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 40px; font-size: var(--t-sm); }
+  .elsewhere a { color: var(--sheet); }
+  .elsewhere span { color: #C3CAD8; }
+  .contact :focus-visible { outline-color: #B9A8F2; }
+  .foot { margin-top: clamp(64px, 9vw, 112px); padding-top: 20px; border-top: 1px solid #3A4357; font-size: var(--t-xs); color: #8D96AA; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 980px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .chain { max-width: 560px; }
+    .case { grid-template-columns: 1fr; }
+    .meta dl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .path { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+    .creds { grid-template-columns: 1fr 1fr; }
+    .focus, .focus.four { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+    .record th { width: 34%; font-size: var(--t-lg); }
+    .record td + td { display: none; }
+    .row-btn { grid-template-columns: minmax(0, 1fr) 130px 48px 24px; }
+    .row-what { display: none; }
+  }
+  @media (max-width: 680px) {
+    .site-nav { display: none; }
+    .block-head { grid-template-columns: 1fr; gap: 14px; }
+    .points, .ledger-wrap { grid-template-columns: 1fr; }
+    .ledger-wrap { margin-bottom: 28px; }
+    .ledger-wrap .ledger { margin: 0; }
+    .ledger-wrap .ledger + .ledger caption { display: none; }
+    .ledger-wrap .ledger:first-child tr:last-child th, .ledger-wrap .ledger:first-child tr:last-child td { border-bottom: 1px solid var(--rule); }
+    .meta dl { grid-template-columns: 1fr 1fr; }
+    .skills { grid-template-columns: 1fr; }
+    .path { grid-template-columns: 1fr; }
+    .creds { grid-template-columns: 1fr; }
+    .focus, .focus.four { grid-template-columns: 1fr; }
+    .chain-head { flex-direction: column; gap: 2px; }
+    .record, .record tbody, .record tr, .record th, .record td { display: block; width: auto; }
+    .record th { padding: 18px 0 6px; border: 0; }
+    .record td { padding: 0 0 18px; }
+    .row-btn { grid-template-columns: minmax(0, 1fr) 24px; gap: 12px; }
+    .row-area, .row-year { display: none; }
+    .row-body { grid-template-columns: 1fr; }
+    .seal { width: 112px; height: 112px; right: auto; left: 12px; bottom: -44px; }
+    .chain-foot > span:first-child { visibility: hidden; }
+    .p2p { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .seal.landed { animation: none; opacity: 0.88; }
+    .plus::before, .plus::after { transition: none; }
+  }
+  @media print {
+    .site-nav, .filters, .actions, .plus { display: none; }
+    .row-body[hidden] { display: grid; }
+    .contact { background: none; color: var(--ink); }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="#top">Suraj Kumar</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#focus">Focus</a>
+      <a href="#lead">Approach</a>
+      <a href="#security">Security</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1><span>From the</span><span>first sign-in</span><span class="thin">to the last</span><span>ledger entry.</span></h1>
+        <p class="intro">I’m Suraj Kumar, a solution architect in Gurgaon. I started in bancassurance sales, then spent 4+ years in IT across support, infrastructure, cloud security and software engineering. Today I run presales and requirement gathering, design systems end to end, and build and secure what I design.</p>
+        <div class="actions">
+          <a class="btn primary" href="#focus">See what I do</a>
+          <a class="btn" href="Suraj_Kumar_Resume.pdf" download>Download resume</a>
+          <a class="btn" href="mailto:sk9836413@gmail.com">Email me</a>
+        </div>
+      </div>
+
+      <div class="chain" aria-label="The business chain I have built software for">
+        <div class="chain-head"><b>One business, end to end</b><span>Designed, built and secured</span></div>
+        <ol id="chain">
+          <li><a href="#security"><span class="step-name">Staff signed in with MFA<small>Conditional Access across 500+ users</small></span><span class="status">Built</span></a></li>
+          <li><a href="#case-crm"><span class="step-name">Lead captured<small>Sales CRM with business card scanner</small></span><span class="status">Built</span></a></li>
+          <li><a href="#case-p2p"><span class="step-name">Purchase approved<small>Procure-to-pay workflow engine</small></span><span class="status">Built</span></a></li>
+          <li><a href="#case-licence"><span class="step-name">Licence checked, invoice posted<small>Business Central AL extension</small></span><span class="status">Built</span></a></li>
+          <li><a href="#case-workspace"><span class="step-name">Payroll run with PF, ESI, TDS<small>Vatsin Workspace HR suite</small></span><span class="status">Built</span></a></li>
+          <li><a href="#projects"><span class="step-name">Customer notified on WhatsApp<small>Multi-tenant WhatsApp SaaS</small></span><span class="status">Built</span></a></li>
+        </ol>
+        <div class="chain-foot">
+          <span>Checked and signed</span>
+          <span class="sign">Suraj Kumar</span>
+        </div>
+        <div class="seal" id="seal" aria-hidden="true">
+          <svg viewBox="0 0 160 160">
+            <defs><path id="ring" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+            <circle cx="80" cy="80" r="74" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="80" cy="80" r="44" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <text font-size="10.5"><textPath href="#ring" textLength="356" lengthAdjust="spacing">SURAJ KUMAR ★ SOLUTION ARCHITECT ★ </textPath></text>
+            <text x="80" y="76" text-anchor="middle" font-size="15">BUILT</text>
+            <text x="80" y="94" text-anchor="middle" font-size="11">2021–2026</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="focus">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>What I architect</h2>
+        <p>Five areas I design for and have delivered hands-on. Each one links to the proof.</p>
+      </div>
+      <ul class="focus">
+        <li>
+          <h3>Identity and security</h3>
+          <p>Zero Trust on Microsoft Entra ID: Conditional Access, MFA, RBAC and PAM360. A breached Microsoft 365 tenant recovered with zero data loss.</p>
+          <a href="#security">Security record</a>
+        </li>
+        <li>
+          <h3>Cloud and infrastructure</h3>
+          <p>Azure first, plus AWS Lambda, S3 and EC2. Kubernetes and high availability with Patroni, HAProxy and Windows NLB. Point-in-time backups, cross-region DR, and NOC monitoring with Site24x7 and OpManager.</p>
+          <a href="#security">Infrastructure work</a>
+        </li>
+        <li>
+          <h3>Microsoft 365 and migration</h3>
+          <p>15,000 users moved from Google Workspace and between Microsoft 365 tenants, plus Graph tools for mailboxes of 50–100 GB.</p>
+          <a href="#projects">Microsoft 365 tools</a>
+        </li>
+        <li>
+          <h3>Enterprise apps and ERP</h3>
+          <p>Business Central integrations, procure-to-pay, CRM, HR and payroll built for Indian tax and labour rules.</p>
+          <a href="#work">Selected work</a>
+        </li>
+        <li>
+          <h3>AI and automation</h3>
+          <p>Self-hosted LLMs, voice agents, document AI, Power Automate flows and CI/CD pipelines.</p>
+          <a href="#projects">AI projects</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="lead">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>How I work</h2>
+        <p>A solution architect turns a business problem into a system people can build, run and trust. This is how I do it, with proof from my own work.</p>
+      </div>
+      <ul class="focus four">
+        <li>
+          <h3>From requirement to design</h3>
+          <p>I run presales demos and requirement gathering for Vatsin and its sister company Bless Tech Solutions. For Vatsin Workspace I turned market research and Indian payroll and labour rules into the scope and architecture of 17 products.</p>
+          <a href="#case-workspace">Vatsin Workspace</a>
+        </li>
+        <li>
+          <h3>Leading delivery</h3>
+          <p>I led a team of 4 that took a sales and licence compliance portal from prototype to production, delivered in phases, each tested and signed off before the next.</p>
+          <a href="#case-licence">The portal</a>
+        </li>
+        <li>
+          <h3>Designing for operations</h3>
+          <p>2.5 years in support and L2/L3 escalations taught me how systems fail. My designs include monitoring with Site24x7 and OpManager, a SIEM feed, runbooks and a tested DR plan.</p>
+          <a href="#experience">Experience</a>
+        </li>
+        <li>
+          <h3>Documentation and handover</h3>
+          <p>I write what a client needs to run the system: an operations handbook of 14 processes, manuals for 17 products, and a security pack with SLA, DR plan and a 120-answer questionnaire. I also train client IT teams.</p>
+          <a href="#experience">Awards and certifications</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="security">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Security and infrastructure</h2>
+        <p>Before and alongside development, I’ve run identity, endpoint and server security for organisations of up to 10,000 users. I set up NOC and SOC monitoring with Site24x7, OpManager and Log360, and I own L2/L3 escalations for Azure, identity and endpoint incidents.</p>
+      </div>
+      <table class="record">
+        <tr><th scope="row">0 data lost</th><td>Recovered a compromised Microsoft 365 tenant with Microsoft Support, then hardened it: admin role cleanup, Conditional Access redesign and audit log review.</td><td>Vatsin, 2025–26</td></tr>
+        <tr><th scope="row">10,000 users</th><td>Migrated from Google Workspace to Microsoft 365.</td><td>Vatsin, 2025–26</td></tr>
+        <tr><th scope="row">5,000 users</th><td>Moved in a Microsoft 365 tenant-to-tenant migration, including SharePoint Online data.</td><td>Vatsin, 2025–26</td></tr>
+        <tr><th scope="row">500+ users</th><td>Put under organisation-wide MFA, Conditional Access and device compliance, with RBAC, least privilege and Defender for Endpoint.</td><td>Vatsin, 2025–26</td></tr>
+        <tr><th scope="row">PAM360 HA</th><td>Implemented ManageEngine PAM360 for a Saudi government organisation, with high-availability PostgreSQL (Patroni), HAProxy and Windows NLB.</td><td>Vatsin, 2026</td></tr>
+        <tr><th scope="row">1,100 cameras</th><td>Designed the security architecture for a surveillance command center with multi-petabyte storage.</td><td>Compton Computers, 2024–25</td></tr>
+        <tr><th scope="row">10+ servers</th><td>Hardened Linux and Windows servers, migrated Sophos and SonicWall firewalls with IPS/IDS and VPN, and deployed Log360 SIEM.</td><td>Compton Computers, 2024–25</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Selected work</h2>
+        <p>Systems I designed and built for sales, finance, procurement, HR and IT teams. Most of it is private client work, so I describe the architecture rather than link to it.</p>
+      </div>
+
+      <article class="case lead" id="case-workspace">
+        <div class="meta">
+          <dl>
+            <div><dt>Role</dt><dd>Product owner and lead</dd></div>
+            <div><dt>When</dt><dd>Aug 2026 to now</dd></div>
+            <div><dt>Status</dt><dd>In development, getting ready for pilot customers</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3>Vatsin Workspace</h3>
+          <p class="lede">An Indian HR, payroll and workplace suite: 17 products on one employee record, sold one at a time or as 10 industry bundles. Factories are the first market.</p>
+          <ul class="points">
+            <li><b>Indian payroll built in.</b> PF with the ₹25,000 ceiling, ESI, PT, LWF, TDS under the Income-tax Act 2025, Labour Code registers, gratuity and full-and-final.</li>
+            <li><b>Made for the shop floor.</b> Kiosk tablet with face or PIN punch, eSSL/ZKTeco biometrics, RFID access, gate passes, canteen wallets and piece-rate wages.</li>
+            <li><b>Mobile in 11 languages.</b> Android apps per product in 10 Indian languages plus English, built with React Native and Expo.</li>
+            <li><b>AI on its own server.</b> A self-hosted Qwen assistant that scores résumés, reads receipts, explains payroll changes and drafts help-desk replies.</li>
+            <li><b>Connects to what companies use.</b> REST API, webhooks, SCIM, SSO/SAML, passkeys, WhatsApp, Slack and Teams bots, and an ERP framework starting with Business Central.</li>
+            <li><b>Multi-tenant from day one.</b> Automatic tenant scoping on every query, tenant-to-database routing, read replicas, point-in-time backups and a DR runbook.</li>
+            <li><b>Planned for scale.</b> Stateless instances with Redis-backed state, leader locks for jobs, k6 load tests and a capacity plan from 1,000 to 10 crore users.</li>
+            <li><b>Secure by design.</b> 2FA, passkeys, field-level encryption of PII, Azure Key Vault, CSP, a SIEM feed and a NOC/SOC portal with a CERT-In reporting helper.</li>
+          </ul>
+          <div class="ledger-wrap">
+            <table class="ledger">
+              <caption>Size, October 2026</caption>
+              <tr><th scope="row">Lines of TypeScript</th><td>670,000</td></tr>
+              <tr><th scope="row">API routes</th><td>1,640</td></tr>
+              <tr><th scope="row">Web pages</th><td>224</td></tr>
+              <tr><th scope="row">Database models</th><td>602</td></tr>
+            </table>
+            <table class="ledger">
+              <caption>&nbsp;</caption>
+              <tr><th scope="row">Migrations</th><td>202</td></tr>
+              <tr><th scope="row">Mobile screens</th><td>109</td></tr>
+              <tr><th scope="row">Test scripts</th><td>219</td></tr>
+              <tr><th scope="row">Commits</th><td>800+</td></tr>
+            </table>
+          </div>
+          <p class="note">Built from scratch in about 10 weeks.</p>
+          <ul class="stack"><li>Next.js 15</li><li>TypeScript</li><li>Prisma 7</li><li>PostgreSQL</li><li>React Native / Expo</li><li>Ollama (Qwen)</li><li>Redis</li><li>Docker</li><li>Kubernetes</li><li>Azure Central India</li></ul>
+        </div>
+      </article>
+
+      <article class="case" id="case-p2p">
+        <div class="meta">
+          <dl>
+            <div><dt>Role</dt><dd>Full-stack developer</dd></div>
+            <div><dt>Client</dt><dd>A multi-plant chemicals manufacturer</dd></div>
+            <div><dt>Size</dt><dd>57,000 lines, 116 API routes, 45 models</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3>Procure-to-pay workflow portal</h3>
+          <p class="lede">Takes every purchase across several plants from request to payment. Each step is a task with an owner, a deadline, a reminder and an escalation.</p>
+          <ol class="p2p" aria-label="Procure-to-pay steps">
+            <li>Request</li><li>Approval</li><li>RFQ and quotes</li><li>Purchase order</li><li>Dispatch</li><li>Gate entry</li><li>Receipt and QC</li><li>Invoice check</li><li>Payment</li>
+          </ol>
+          <ul class="points">
+            <li><b>Approval levels by value, budget and plant.</b> HOD steps go to the requester’s manager; self-approval is blocked.</li>
+            <li><b>Indian tax handled by the system.</b> GSTIN checksum, HSN/SAC, CGST+SGST or IGST by state, TDS sections and e-invoice IRN checks.</li>
+            <li><b>Budgets that can’t double-post.</b> A ledger commits spend on PO approval and records actuals on payment, with idempotent postings.</li>
+            <li><b>One-screen approvals.</b> Amount with tax, budget impact, last purchase price, quotes and the approval chain, with Approve, Send back and Reject.</li>
+            <li><b>Imports, rate contracts, service POs and emergency POs,</b> each with its own rules, plus quality holds and three-way invoice matching.</li>
+            <li><b>Tested against a real database.</b> 17 end-to-end suites with 379 checks, a role-access audit and a 25-page UI audit on desktop, phone and dark mode.</li>
+          </ul>
+          <ul class="stack"><li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma 7</li><li>Business Central OData</li><li>Microsoft Graph</li><li>Power Automate</li><li>Azure Document Intelligence</li></ul>
+        </div>
+      </article>
+
+      <article class="case" id="case-licence">
+        <div class="meta">
+          <dl>
+            <div><dt>Role</dt><dd>Lead developer, team of 4</dd></div>
+            <div><dt>Client</dt><dd>A fumigants manufacturer and exporter</dd></div>
+            <div><dt>Size</dt><dd>31,000 lines of TypeScript and AL, 58 models, 30+ screens</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3>Sales, CRM and licence compliance portal</h3>
+          <p class="lede">Sales, receivables and licences in one portal, with live Business Central data. Taken from prototype to production.</p>
+          <ul class="points">
+            <li><b>The portal can stop an invoice.</b> A Business Central extension checks the portal before an invoice posts. It is blocked, allowed or sent to a maker-checker approval queue with amount limits.</li>
+            <li><b>Rules without code.</b> Licence rules live in a master screen the business edits itself.</li>
+            <li><b>Incremental sync of 12 entities</b> through custom AL API pages every 15 minutes or on demand, with export invoices converted to INR and balances rebuilt from the ledger.</li>
+            <li><b>8 roles with row-level security</b> checked on every server action and API route, plus Customer 360 and dashboards for targets, pipeline, receivables ageing and market share.</li>
+          </ul>
+          <ul class="stack"><li>Next.js 16</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>NextAuth v5</li><li>Microsoft Graph</li><li>AL (Business Central)</li></ul>
+        </div>
+      </article>
+
+      <article class="case" id="case-crm">
+        <div class="meta">
+          <dl>
+            <div><dt>Type</dt><dd>Client project</dd></div>
+            <div><dt>When</dt><dd>2026</dd></div>
+            <div><dt>Runs on</dt><dd>Android, iOS and web</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3>Sales CRM for phone, tablet and desktop</h3>
+          <p class="lede">The full sales cycle in one Flutter app, from a business card scanned at a meeting to a quote emailed from the salesperson’s own mailbox.</p>
+          <ul class="points">
+            <li><b>Leads, deals, quotes and orders</b> with a stage pipeline, approval workflows, tasks and team views.</li>
+            <li><b>Business Central customers and items</b> available inside the app.</li>
+            <li><b>REST API with 25+ controllers</b> and 27 database migrations as the product grew.</li>
+            <li><b>Admin panel</b> for users, products, audit, email and notification settings, in light and dark themes.</li>
+          </ul>
+          <ul class="stack"><li>Flutter</li><li>Dart</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>JWT</li><li>Docker</li><li>GitHub Actions</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Experience</h2>
+        <p>From selling insurance through banks to supporting, securing and designing the systems businesses run on.</p>
+      </div>
+      <ol class="path">
+        <li>
+          <time>Sep 2020 – Nov 2021</time>
+          <h3>Sales, Bancassurance</h3>
+          <p class="org">Bajaj Allianz General Insurance</p>
+          <ul><li>Delivered 250% sales growth in my zone, selling through partner bank branches</li><li>On the payroll of Bajaj Allianz Staffing Solutions</li></ul>
+        </li>
+        <li>
+          <time>Dec 2021 – Jul 2024</time>
+          <h3>Technical Support Engineer</h3>
+          <p class="org">eSSL Security</p>
+          <ul><li>Deployed biometric access control systems and ran their MySQL and MSSQL databases</li><li>Wrote solution documentation and trained client IT teams</li></ul>
+        </li>
+        <li>
+          <time>Oct 2024 – Sep 2025</time>
+          <h3>Server / Infrastructure Engineer</h3>
+          <p class="org">Compton Computers</p>
+          <ul><li>Hardened 10+ servers and secured Microsoft 365, Google Workspace and Zoho for clients</li><li>High availability and DR for ERP, Active Directory and app workloads</li></ul>
+        </li>
+        <li>
+          <time>Oct 2025 – Apr 2026</time>
+          <h3>System Administrator, Azure and Microsoft 365 Security</h3>
+          <p class="org">Vatsin Technology Solutions</p>
+          <ul><li>Tenant recovery with zero data loss and 15,000 users migrated</li><li>Improved Microsoft Secure Score through policy hardening</li></ul>
+        </li>
+        <li class="now">
+          <time>May 2026 – now</time>
+          <h3>Senior Software Engineer</h3>
+          <p class="org">Vatsin Technology Solutions</p>
+          <ul><li>Presales demos and requirement gathering for Vatsin and its sister company Bless Tech Solutions</li><li>Product owner and lead of Vatsin Workspace</li><li>Client portals on Business Central and the PAM360 rollout</li></ul>
+        </li>
+      </ol>
+      <div class="creds">
+        <div>
+          <h3>Certifications</h3>
+          <ul>
+            <li>Microsoft 365 Certified: Administrator Expert<span>2026</span></li>
+            <li>Identity and Access Administrator Associate (SC-300)<span>2026</span></li>
+            <li>Microsoft Certified: SQL AI Developer Associate<span>2026</span></li>
+            <li>ManageEngine Log360 SIEM (MECPA)</li>
+            <li>OCNA Wireless Certified<span>2025</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Awards</h3>
+          <ul><li>Best Performance, awarded twice<span>For solution delivery and infrastructure reliability</span></li></ul>
+        </div>
+        <div>
+          <h3>Education</h3>
+          <ul><li>Bachelor of Computer Applications<span>Sido Kanhu Murmu University, Dumka, 2020</span></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>All projects</h2>
+        <p>Microsoft 365 tools, ERP integrations, SaaS products and AI apps. Open any row for details.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="Microsoft 365" aria-pressed="false">Microsoft 365</button>
+        <button type="button" data-filter="ERP" aria-pressed="false">ERP</button>
+        <button type="button" data-filter="SaaS" aria-pressed="false">SaaS</button>
+        <button type="button" data-filter="AI" aria-pressed="false">AI</button>
+      </div>
+      <div class="index" id="index"></div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>What I work with</h2>
+        <p>I take a project from database design to deployment, and I know how to secure what I ship.</p>
+      </div>
+      <div class="skills">
+        <div>
+          <h3>Development</h3>
+          <ul><li>TypeScript, Next.js, React 19</li><li>Node.js, Express, NestJS</li><li>Flutter, React Native (Expo)</li><li>Python, FastAPI</li><li>PostgreSQL, Prisma, Redis</li><li>REST APIs, webhooks, multi-tenant SaaS</li></ul>
+        </div>
+        <div>
+          <h3>ERP and business rules</h3>
+          <ul><li>Dynamics 365 Business Central (AL)</li><li>Microsoft Graph, Power Automate</li><li>GST, HSN/SAC, e-invoice IRN</li><li>PF, ESI, PT, LWF, TDS</li><li>Labour Codes, DPDP Act</li></ul>
+        </div>
+        <div>
+          <h3>AI</h3>
+          <ul><li>Self-hosted Qwen with Ollama</li><li>OpenAI GPT-4, Azure OpenAI, Gemini</li><li>Deepgram, ElevenLabs</li><li>Azure Document Intelligence</li><li>AI agents, MCP servers</li><li>Claude Code, Codex, Antigravity</li></ul>
+        </div>
+        <div>
+          <h3>DevOps and reliability</h3>
+          <ul><li>Git and GitHub for version control</li><li>AWS Lambda, S3, EC2</li><li>Docker, Kubernetes, nginx, PM2</li><li>GitHub Actions CI/CD</li><li>WAL-G backups, read replicas, DR</li><li>Patroni HA, HAProxy, Windows NLB</li><li>k6 load testing</li></ul>
+        </div>
+        <div>
+          <h3>Identity and access</h3>
+          <ul><li>Microsoft Entra ID, Active Directory</li><li>Conditional Access, MFA, RBAC</li><li>SSO/SAML, SCIM, passkeys</li><li>ManageEngine PAM360</li><li>Zero Trust, identity governance</li></ul>
+        </div>
+        <div>
+          <h3>Azure and Microsoft 365 security</h3>
+          <ul><li>Defender for Cloud, Endpoint, Office 365</li><li>Intune, Secure Score</li><li>Azure Key Vault, NSG/ASG, Azure Firewall</li><li>Exchange Online Protection</li><li>SharePoint and OneDrive controls</li></ul>
+        </div>
+        <div>
+          <h3>NOC and SOC</h3>
+          <ul><li>Site24x7, ManageEngine OpManager <span>setup and monitoring</span></li><li>Log360 SIEM, incident response</li><li>Audit logging, field-level encryption</li><li>CERT-In reporting</li><li>Sophos, SonicWall, IPS/IDS, VPN</li></ul>
+        </div>
+        <div>
+          <h3>Migration and platforms</h3>
+          <ul><li>Google Workspace to Microsoft 365</li><li>Tenant-to-tenant, SharePoint Online</li><li>SysTools, ServiceDesk Plus MSP</li><li>Windows Server, Linux</li><li>PowerShell, Bash, MySQL, MSSQL</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Need a solution architect?</h2>
+    <p>I’m looking for solution architect roles. Write to me, or send the problem you need solved and I’ll show you how I’d design it.</p>
+    <a class="mail" href="mailto:sk9836413@gmail.com">sk9836413@gmail.com</a>
+    <div class="elsewhere">
+      <a href="https://www.linkedin.com/in/suraj-kumar-45b377201/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/sk9836413" target="_blank" rel="noopener">GitHub</a>
+      <a href="tel:+919570149579">+91 95701 49579</a>
+      <a href="Suraj_Kumar_Resume.pdf" download>Resume (PDF)</a>
+      <span>Gurgaon, India</span>
+    </div>
+    <div class="foot">
+      <span>Suraj Kumar, 2026</span>
+      <span>Client work is described by industry, without naming clients.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  const projects = [
+    { name: 'M365 Duplicate Mail Cleanup', area: 'Microsoft 365', year: 2026,
+      what: 'Finds and safely removes duplicate email in 50–100 GB mailboxes',
+      points: ['Scans 20+ mailboxes in parallel, with progress, throughput and ETA', 'Three ways to match duplicates, including one that tolerates clock drift after a migration', 'Moves duplicates to Deleted Items through Graph batch calls and never hard-deletes', 'Client secrets encrypted with AES-256-GCM; recovers from Graph throttling'],
+      stack: 'Next.js 15, TypeScript, Prisma, SQLite, Microsoft Graph, MSAL, Docker' },
+    { name: 'M365 Tenant-to-Tenant Migration', area: 'Microsoft 365', year: 2026,
+      what: 'Moves users, mailboxes, groups, Teams and SharePoint between tenants',
+      points: ['Wizard: pick source, destination and resources, then confirm', 'Per-resource progress with start, pause and cancel, updated every 3 seconds', 'API-first pnpm monorepo: an OpenAPI spec generates typed React Query hooks and Zod schemas'],
+      stack: 'React, Vite, Express 5, PostgreSQL, Drizzle ORM, OpenAPI, Orval, TanStack Query' },
+    { name: 'Hybrid Enterprise Mail + License Portal', area: 'Microsoft 365', year: 2026,
+      what: 'Branded Outlook-style mail, calendar and contacts on Microsoft 365',
+      points: ['Threaded mail, pop-out compose, rules, advanced search and Web Push alerts', 'MFA, forced password change and an admin console with bulk user import', 'Separate license portal with a public license-validation API', 'Deployed on Azure App Service with Azure Pipelines, Socket.IO and Redis'],
+      stack: 'Next.js, Node.js, Socket.IO, PostgreSQL, Redis, Microsoft Graph, Azure' },
+    { name: 'BC Change Log Archive', area: 'ERP', year: 2026,
+      what: 'Moves 100+ GB of Business Central change log out to PostgreSQL',
+      points: ['AL extension sends new entries every 5 minutes in batches of 1,000', 'Nightly job verifies archived entries before deleting them from BC', 'Idempotent Node.js API running as a Windows service, with JWT auth', 'Monthly partitions, parallel resumable migration with COPY, and WAL backups'],
+      stack: 'AL (Business Central), Node.js, PostgreSQL 17, PowerShell, Windows Server' },
+    { name: 'Vatsin WhatsApp SaaS', area: 'SaaS', year: 2026, live: 'https://vatsin-whatsapp-saas.vercel.app',
+      what: 'Bulk campaigns, OTPs and alerts over WhatsApp, billed from a wallet',
+      points: ['Businesses connect several WhatsApp numbers by scanning a QR code', 'Developer API with keys for text, media and OTP messages', 'Sending engine that throttles, randomises and spreads load across numbers to protect them', 'Super-admin panel for users, numbers, campaigns and pricing'],
+      stack: 'Next.js, TypeScript, Express, Baileys, Prisma, WebSockets' },
+    { name: 'Vatsin IMS (AssetHub v4)', area: 'SaaS', year: 2026,
+      what: 'IT asset tracking from purchase to disposal',
+      points: ['Asset tags with QR codes and scanning in the browser', 'Approval workflows for assign, return and transfer, plus booking with conflict checks', 'Three depreciation methods, maintenance schedules and expiry alerts', 'Documentation in 11 languages and a whitepaper deck generated with python-pptx'],
+      stack: 'Laravel 11, PHP 8.2, Vue 3, Inertia.js, Python' },
+    { name: 'AI Voice Assistant for Service Calls', area: 'AI', year: 2026,
+      what: 'Phone bot that books service complaints for a commercial kitchen equipment brand',
+      points: ['Asks one question at a time and collects 14 ticket fields', 'Checks mobile numbers, emails and dates as the caller speaks', 'Reads everything back, then creates the ticket in Power Apps through a webhook', 'Deepgram speech-to-text, GPT-4 and ElevenLabs voice, on Tata Smartflo telephony'],
+      stack: 'Python, FastAPI, OpenAI GPT-4, Deepgram, ElevenLabs, Power Automate' },
+    { name: 'Vatsin Workflow 360', area: 'AI', year: 2026, proto: true,
+      what: 'Organisations design their own request forms and approval flows',
+      points: ['Form builder and visual workflow builder', 'Separate employee and manager portals, installable as a PWA', 'Subscription and license module'],
+      stack: 'React, Vite, Express, PostgreSQL, Firebase, Google Gemini' },
+    { name: 'Synthetix Workspace', area: 'AI', year: 2026, proto: true,
+      what: 'Meeting summaries and follow-ups across Google and Microsoft calendars',
+      points: ['Reads calendars from Google Workspace and Microsoft 365', 'AI summaries and automatic follow-ups', 'Background jobs on BullMQ and Redis'],
+      stack: 'React, NestJS, PostgreSQL, TypeORM, BullMQ, Redis, Microsoft Graph, Gemini' },
+    { name: 'HR Flow AI', area: 'AI', year: 2026, proto: true,
+      what: 'Résumé screening, leave and an HR assistant',
+      points: ['Upload and parse résumés with AI-assisted screening', 'Leave management and dashboards', 'Assistant that answers employee questions'],
+      stack: 'React, Express, Firebase, Google Gemini' },
+    { name: 'Admin & IT Hub', area: 'SaaS', year: 2026, proto: true,
+      what: 'IT helpdesk and admin operations for an education company',
+      points: ['IT ticketing and asset management', 'Admin operations with cost tracking', 'Dashboards built with D3 and Recharts'],
+      stack: 'React, Vite, Firebase, D3.js, Recharts' },
+    { name: 'ChronosRace Pro', area: 'AI', year: 2025, proto: true,
+      what: 'Timing and results for marathons and cycle races',
+      points: ['Live leaderboards and camera-based check-in', 'AI flags suspicious timing data', 'Works offline, storing data in the browser'],
+      stack: 'React, Vite, Dexie (IndexedDB), Google Gemini' },
+  ];
+
+  const index = document.getElementById('index');
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  index.innerHTML = projects.map((p, i) => `
+    <div class="row" data-area="${p.area}">
+      <button class="row-btn" type="button" aria-expanded="false" aria-controls="p${i}">
+        <span class="row-name">${esc(p.name)}${p.live ? '<span class="live-tag">Live</span>' : ''}${p.proto ? '<span class="proto-tag">Prototype</span>' : ''}</span>
+        <span class="row-what">${esc(p.what)}</span>
+        <span class="row-area">${p.area}</span>
+        <span class="row-year">${p.year}</span>
+        <span class="plus" aria-hidden="true"></span>
+      </button>
+      <div class="row-body" id="p${i}" hidden>
+        <p>${esc(p.what)}.</p>
+        <div>
+          <ul class="points">${p.points.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+          <ul class="stack">${p.stack.split(', ').map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+          ${p.live ? `<p><a class="live" href="${p.live}" target="_blank" rel="noopener">Visit ${p.live.replace('https://', '')}</a></p>` : ''}
+        </div>
+      </div>
+    </div>`).join('');
+
+  index.addEventListener('click', e => {
+    const btn = e.target.closest('.row-btn');
+    if (!btn) return;
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    document.getElementById(btn.getAttribute('aria-controls')).hidden = open;
+  });
+
+  document.querySelector('.filters').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    const f = b.dataset.filter;
+    index.querySelectorAll('.row').forEach(r => { r.hidden = f !== 'all' && r.dataset.area !== f; });
+  });
+
+  // Hero: the chain approves one step at a time, then the seal lands.
+  const steps = [...document.querySelectorAll('#chain li')];
+  const seal = document.getElementById('seal');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    steps.forEach(s => s.classList.add('done'));
+    seal.classList.add('landed');
+  } else {
+    steps.forEach(s => { s.classList.add('waiting'); s.querySelector('.status').textContent = 'Pending'; });
+    steps.forEach((s, i) => setTimeout(() => {
+      s.classList.remove('waiting'); s.classList.add('done');
+      s.querySelector('.status').textContent = 'Built';
+      if (i === steps.length - 1) setTimeout(() => seal.classList.add('landed'), 350);
+    }, 500 + i * 420));
+  }
+</script>
+</body>
+</html>
