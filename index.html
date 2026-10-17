@@ -355,7 +355,7 @@
           <li><a href="#case-p2p"><span class="step-name">Purchase approved<small>Procure-to-pay workflow engine</small></span><span class="status">Built</span></a></li>
           <li><a href="#case-licence"><span class="step-name">Licence checked, invoice posted<small>Business Central AL extension</small></span><span class="status">Built</span></a></li>
           <li><a href="#case-workspace"><span class="step-name">Payroll run with PF, ESI, TDS<small>Vatsin Workspace HR suite</small></span><span class="status">Built</span></a></li>
-          <li><a href="#projects"><span class="step-name">Customer notified on WhatsApp<small>Multi-tenant WhatsApp SaaS</small></span><span class="status">Built</span></a></li>
+          <li><a href="#projects"><span class="step-name">Customer notified on WhatsApp<small>Vatsin WhatsApp SaaS, live in production</small></span><span class="status">Built</span></a></li>
         </ol>
         <div class="chain-foot">
           <span>Checked and signed</span>
@@ -741,10 +741,10 @@
       what: 'Moves 100+ GB of Business Central change log out to PostgreSQL',
       points: ['AL extension sends new entries every 5 minutes in batches of 1,000', 'Nightly job verifies archived entries before deleting them from BC', 'Idempotent Node.js API running as a Windows service, with JWT auth', 'Monthly partitions, parallel resumable migration with COPY, and WAL backups'],
       stack: 'AL (Business Central), Node.js, PostgreSQL 17, PowerShell, Windows Server' },
-    { name: 'Vatsin WhatsApp SaaS', area: 'SaaS', year: 2026, live: 'https://vatsin-whatsapp-saas.vercel.app',
-      what: 'Bulk campaigns, OTPs and alerts over WhatsApp, billed from a wallet',
-      points: ['Businesses connect several WhatsApp numbers by scanning a QR code', 'Developer API with keys for text, media and OTP messages', 'Sending engine that throttles, randomises and spreads load across numbers to protect them', 'Super-admin panel for users, numbers, campaigns and pricing'],
-      stack: 'Next.js, TypeScript, Express, Baileys, Prisma, WebSockets' },
+    { name: 'Vatsin WhatsApp SaaS', area: 'SaaS', year: 2026, live: 'https://whatsapp.vatsintech.com',
+      what: 'Live in production: WhatsApp campaigns, OTPs, chatbots and a developer API',
+      points: ['In production on its own server, with its first client sending live traffic', 'Businesses connect several WhatsApp numbers by QR and route messages across them', 'Developer REST API for text, media and OTP messages, with per-number API tokens and a playground', 'Chatbots with keyword, welcome and fallback triggers, menus, input flows and signed webhooks', 'Anti-ban engine: number warm-up, per-number pacing, daily limits and atomic credit deduction', 'Wallet billing in INR and USD, CSV/Excel contact import, opt-out handling and a super-admin panel'],
+      stack: 'Next.js, TypeScript, Express, WebSockets, Baileys, Prisma, Nginx, PM2' },
     { name: 'Vatsin IMS (AssetHub v4)', area: 'SaaS', year: 2026,
       what: 'IT asset tracking from purchase to disposal',
       points: ['Asset tags with QR codes and scanning in the browser', 'Approval workflows for assign, return and transfer, plus booking with conflict checks', 'Three depreciation methods, maintenance schedules and expiry alerts', 'Documentation in 11 languages and a whitepaper deck generated with python-pptx'],
