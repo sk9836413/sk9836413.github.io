@@ -810,7 +810,11 @@
       what: 'Moves mail, files and Teams between Microsoft 365, Google Workspace, IMAP and PST',
       points: ['Mail, Teams, SharePoint and Intune connectors', 'Gmail, Drive, Vault and Classroom connectors', 'PST and MBOX import, and Active Directory sync', 'Encrypted credentials, a web dashboard and a CLI', 'So far tested against simulated services only'],
       stack: 'Python, FastAPI, MSAL, PostgreSQL, Docker' },
-    { name: 'Retail and restaurant POS for Business Central', area: 'Personal', year: 2026, proto: true,
+    { name: 'Endpoint management suite', area: 'Personal', year: 2026, dev: true,
+      what: 'A self-hosted suite to manage and secure company laptops and servers, in development',
+      points: ['Hardware and software inventory from a Windows agent', 'Software deployment and patch management', 'Remote access to devices', 'Vulnerability checks, device control and BitLocker status', 'Mobile device management and Active Directory management'],
+      stack: 'Python, FastAPI, React, Vite' },
+    { name: 'Retail and restaurant POS for Business Central', area: 'Personal', year: 2026, dev: true,
       what: 'A point-of-sale extension suite for Business Central, in development',
       points: ['Seven AL apps: core POS, hospitality, India GST (e-invoice and e-way bill), payments, e-commerce and Tally migration', 'About 480 AL objects', 'QR table ordering and a kitchen display', 'Hardware bridge for printers, drawers and payment terminals'],
       stack: 'AL (Business Central), .NET, Azure Functions, Power BI' },
@@ -861,7 +865,7 @@
   index.innerHTML = projects.map((p, i) => `
     <div class="row" data-area="${p.area}">
       <button class="row-btn" type="button" aria-expanded="false" aria-controls="p${i}">
-        <span class="row-name">${esc(p.name)}${p.live ? '<span class="live-tag">Live</span>' : ''}${p.proto ? '<span class="proto-tag">Prototype</span>' : ''}${p.area === 'Personal' ? '<span class="proto-tag">Personal</span>' : ''}</span>
+        <span class="row-name">${esc(p.name)}${p.live ? '<span class="live-tag">Live</span>' : ''}${p.proto ? '<span class="proto-tag">Prototype</span>' : ''}${p.dev ? '<span class="proto-tag">In development</span>' : ''}${p.area === 'Personal' ? '<span class="proto-tag">Personal</span>' : ''}</span>
         <span class="row-what">${esc(p.what)}</span>
         <span class="row-area">${p.area}</span>
         <span class="row-year">${p.year}</span>
