@@ -420,7 +420,7 @@
       <ul class="focus four">
         <li>
           <h3>From requirement to design</h3>
-          <p>I run presales demos and requirement gathering for Vatsin and its sister company Bless Tech Solutions. For Vatsin Workspace I turned market research and Indian payroll and labour rules into the scope and architecture of 17 products.</p>
+          <p>I run presales demos and requirement gathering for Vatsin and its sister company Bless Tech Solutions. For Vatsin Workspace I turned market research and Indian payroll and labour rules into the scope and architecture of 18 products.</p>
           <a href="#case-workspace">Vatsin Workspace</a>
         </li>
         <li>
@@ -472,12 +472,12 @@
           <dl>
             <div><dt>Role</dt><dd>Product owner and lead</dd></div>
             <div><dt>When</dt><dd>Aug 2026 to now</dd></div>
-            <div><dt>Status</dt><dd>In development, getting ready for pilot customers</dd></div>
+            <div><dt>Status</dt><dd>Live demos running; production and first pilot being prepared</dd></div>
           </dl>
         </div>
         <div>
           <h3>Vatsin Workspace</h3>
-          <p class="lede">An Indian HR, payroll and workplace suite: 17 products on one employee record, sold one at a time or as 10 industry bundles. Factories are the first market.</p>
+          <p class="lede">An Indian HR, payroll and workplace suite: 18 products on one employee record, sold one at a time or as 10 industry bundles. Factories are the first market.</p>
           <ul class="points">
             <li><b>Indian payroll built in.</b> PF with the ₹25,000 ceiling, ESI, PT, LWF, TDS under the Income-tax Act 2025, Labour Code registers, gratuity and full-and-final.</li>
             <li><b>Made for the shop floor.</b> Kiosk tablet with face or PIN punch, eSSL/ZKTeco biometrics, RFID access, gate passes, canteen wallets and piece-rate wages.</li>
@@ -644,7 +644,7 @@
     <div class="wrap">
       <div class="block-head">
         <h2>All projects</h2>
-        <p>Microsoft 365 tools, ERP integrations, SaaS products and AI apps. Open any row for details.</p>
+        <p>Company work first: Microsoft 365 tools, ERP integrations, SaaS products and AI apps. Personal &amp; learning projects are things I build on my own time to try new ideas. Open any row for details.</p>
       </div>
       <div class="filters" role="group" aria-label="Filter projects">
         <button type="button" data-filter="all" aria-pressed="true">All</button>
@@ -652,6 +652,7 @@
         <button type="button" data-filter="ERP" aria-pressed="false">ERP</button>
         <button type="button" data-filter="SaaS" aria-pressed="false">SaaS</button>
         <button type="button" data-filter="AI" aria-pressed="false">AI</button>
+        <button type="button" data-filter="Personal" aria-pressed="false">Personal &amp; learning</button>
       </div>
       <div class="index" id="index"></div>
     </div>
@@ -733,22 +734,46 @@
       what: 'Moves users, mailboxes, groups, Teams and SharePoint between tenants',
       points: ['Wizard: pick source, destination and resources, then confirm', 'Per-resource progress with start, pause and cancel, updated every 3 seconds', 'API-first pnpm monorepo: an OpenAPI spec generates typed React Query hooks and Zod schemas'],
       stack: 'React, Vite, Express 5, PostgreSQL, Drizzle ORM, OpenAPI, Orval, TanStack Query' },
-    { name: 'Hybrid Enterprise Mail + License Portal', area: 'Microsoft 365', year: 2026,
-      what: 'Branded Outlook-style mail, calendar and contacts on Microsoft 365',
-      points: ['Threaded mail, pop-out compose, rules, advanced search and Web Push alerts', 'MFA, forced password change and an admin console with bulk user import', 'Separate license portal with a public license-validation API', 'Deployed on Azure App Service with Azure Pipelines, Socket.IO and Redis'],
-      stack: 'Next.js, Node.js, Socket.IO, PostgreSQL, Redis, Microsoft Graph, Azure' },
+    { name: 'Vatsin Email Marketing', area: 'SaaS', year: 2026, live: 'https://email.vatsintech.com',
+      what: 'Live: bulk email outreach that protects deliverability, with a branded mail client',
+      points: ['Gmail, Outlook (OAuth) and SMTP senders with warm-up', 'Random send delays, sender rotation and spintax to keep campaigns out of spam', 'Campaign queue, CSV/Excel lists, templates, open and click tracking, and unsubscribe handling', 'Plans, API keys, TOTP MFA and an audit log', 'Built-in Outlook-style mail client on Microsoft 365 and a separate licence portal'],
+      stack: 'Next.js, Express, Prisma, PostgreSQL, Nodemailer, Microsoft Graph, PM2, Nginx, Azure' },
     { name: 'BC Change Log Archive', area: 'ERP', year: 2026,
       what: 'Moves 100+ GB of Business Central change log out to PostgreSQL',
       points: ['AL extension sends new entries every 5 minutes in batches of 1,000', 'Nightly job verifies archived entries before deleting them from BC', 'Idempotent Node.js API running as a Windows service, with JWT auth', 'Monthly partitions, parallel resumable migration with COPY, and WAL backups'],
       stack: 'AL (Business Central), Node.js, PostgreSQL 17, PowerShell, Windows Server' },
+    { name: 'Bank payments integration for Business Central', area: 'ERP', year: 2026,
+      what: 'Payments and collections between Business Central and a bank\'s corporate API',
+      points: ['Vendor payments sent from Business Central to the bank', 'Incoming collections matched back into Business Central', 'Encrypted API calls (JWE) and an IP allow-list', 'Verification portal for the finance team', 'Business Central AL extension on the ERP side'],
+      stack: 'Node.js, Express, AL (Business Central)' },
+    { name: 'Travel request portal', area: 'ERP', year: 2026,
+      what: 'Employee travel requests and approvals, posted to Business Central',
+      points: ['Spend limits by employee grade', 'Attachments required when a request goes over the limit', 'City master synced from the ERP', 'Email alerts at each approval step', 'Installable web app in more than one language'],
+      stack: 'Next.js, Business Central API' },
+    { name: 'Transporter portal', area: 'ERP', year: 2026,
+      what: 'A portal for logistics partners, connected to Business Central',
+      points: ['Trips and freight invoices submitted by transporters', 'Transport RFQ alerts to partners', 'Two-way sync with Business Central'],
+      stack: 'Next.js, Prisma, PostgreSQL, Business Central API' },
+    { name: 'Supermarket billing POS', area: 'ERP', year: 2026,
+      what: 'Offline counter billing for a supermarket that posts sales to Business Central',
+      points: ['Shifts and multiple counters', 'Weighing-scale items and promotions', 'Printed receipts', 'Sales synced to Business Central in the background'],
+      stack: 'NestJS, Prisma, Redis, BullMQ, Flutter' },
+    { name: 'Regulatory operations analytics hub', area: 'Microsoft 365', year: 2026,
+      what: 'Power BI and web dashboards for a regulatory operations team, built on their Excel trackers',
+      points: ['Gap tracker and submissions timeline (Gantt)', 'Turnaround and SLA tracking', 'Write-back to the source Excel files'],
+      stack: 'FastAPI, Power BI, DAX' },
     { name: 'Vatsin WhatsApp SaaS', area: 'SaaS', year: 2026, live: 'https://whatsapp.vatsintech.com',
       what: 'Live in production: WhatsApp campaigns, OTPs, chatbots and a developer API',
       points: ['In production on its own server, with its first client sending live traffic', 'Businesses connect several WhatsApp numbers by QR and route messages across them', 'Developer REST API for text, media and OTP messages, with per-number API tokens and a playground', 'Chatbots with keyword, welcome and fallback triggers, menus, input flows and signed webhooks', 'Anti-ban engine: number warm-up, per-number pacing, daily limits and atomic credit deduction', 'Wallet billing in INR and USD, CSV/Excel contact import, opt-out handling and a super-admin panel'],
       stack: 'Next.js, TypeScript, Express, WebSockets, Baileys, Prisma, Nginx, PM2' },
-    { name: 'Vatsin IMS (AssetHub v4)', area: 'SaaS', year: 2026,
-      what: 'IT asset tracking from purchase to disposal',
-      points: ['Asset tags with QR codes and scanning in the browser', 'Approval workflows for assign, return and transfer, plus booking with conflict checks', 'Three depreciation methods, maintenance schedules and expiry alerts', 'Documentation in 11 languages and a whitepaper deck generated with python-pptx'],
-      stack: 'Laravel 11, PHP 8.2, Vue 3, Inertia.js, Python' },
+    { name: 'Vatsin POS', area: 'SaaS', year: 2026, live: 'https://pos.vatsintech.com',
+      what: 'Live: offline-first GST point of sale for any Indian store, on web, desktop and mobile',
+      points: ['Billing, inventory, purchases, price lists and promotions', 'Restaurant tables, kitchen display and reservations', 'GST engine with e-invoice and GSTR reports', 'Connectors for Business Central, NetSuite and SAP Business One', 'Keeps billing when the internet drops and syncs later; Windows and Android apps', 'Multi-tenant cloud with row-level security per store'],
+      stack: 'TypeScript monorepo, Next.js 16, Hono, Drizzle, PostgreSQL, PowerSync, Electron, Capacitor' },
+    { name: 'Vatsin IMS', area: 'SaaS', year: 2026, live: 'https://asset.vatsintech.com',
+      what: 'Live: multi-tenant IT asset management, from purchase to disposal',
+      points: ['Each company gets its own subdomain, branding and licence, managed from a super-admin portal', 'Asset tags with QR codes and scanning in the browser', 'Approval workflows for assign, return and transfer, plus booking with conflict checks', 'Three depreciation methods, maintenance schedules and expiry alerts', 'Documentation in 11 languages'],
+      stack: 'Laravel 11, PHP 8.2, Vue 3, Inertia.js' },
     { name: 'AI Voice Assistant for Service Calls', area: 'AI', year: 2026,
       what: 'Phone bot that books service complaints for a commercial kitchen equipment brand',
       points: ['Asks one question at a time and collects 14 ticket fields', 'Checks mobile numbers, emails and dates as the caller speaks', 'Reads everything back, then creates the ticket in Power Apps through a webhook', 'Deepgram speech-to-text, GPT-4 and ElevenLabs voice, on Tata Smartflo telephony'],
@@ -773,6 +798,62 @@
       what: 'Timing and results for marathons and cycle races',
       points: ['Live leaderboards and camera-based check-in', 'AI flags suspicious timing data', 'Works offline, storing data in the browser'],
       stack: 'React, Vite, Dexie (IndexedDB), Google Gemini' },
+    { name: 'Medicine trade ERP', area: 'Personal', year: 2026,
+      what: 'Billing, stock and accounts for medicine traders: allopathy, homeopathy and ayurveda',
+      points: ['Ready catalogue of about 25,000 items with potency and pack variants', 'Batch and expiry billing (first-expiry-first-out), retail and wholesale', 'Schedule H1 and NDPS registers', 'Supplier bill import, bank reconciliation and full books of accounts', 'GST returns, e-invoice and Tally export', 'Windows installer, Android app and a cloud mode'],
+      stack: 'Node.js, Express, SQLite, Capacitor, Docker' },
+    { name: 'Small-business cloud ERP', area: 'Personal', year: 2026,
+      what: 'Multi-company, multi-currency ERP for small businesses',
+      points: ['Quote to order to invoice, purchases and expenses', 'Multi-warehouse inventory with weighted-average costing', 'Double-entry accounting posted automatically, with exchange gain and loss', 'GST (GSTR-1, GSTR-3B) and VAT', 'CRM pipeline and payroll, in Hindi and English'],
+      stack: 'Node.js, Express, Drizzle, PostgreSQL, React, TanStack Query' },
+    { name: 'Any-direction tenant migration engine', area: 'Personal', year: 2026, proto: true,
+      what: 'Moves mail, files and Teams between Microsoft 365, Google Workspace, IMAP and PST',
+      points: ['Mail, Teams, SharePoint and Intune connectors', 'Gmail, Drive, Vault and Classroom connectors', 'PST and MBOX import, and Active Directory sync', 'Encrypted credentials, a web dashboard and a CLI', 'So far tested against simulated services only'],
+      stack: 'Python, FastAPI, MSAL, PostgreSQL, Docker' },
+    { name: 'Retail and restaurant POS for Business Central', area: 'Personal', year: 2026, proto: true,
+      what: 'A point-of-sale extension suite for Business Central, in development',
+      points: ['Seven AL apps: core POS, hospitality, India GST (e-invoice and e-way bill), payments, e-commerce and Tally migration', 'About 480 AL objects', 'QR table ordering and a kitchen display', 'Hardware bridge for printers, drawers and payment terminals'],
+      stack: 'AL (Business Central), .NET, Azure Functions, Power BI' },
+    { name: 'Uptime monitoring and status pages', area: 'Personal', year: 2026,
+      what: 'Watches websites and jobs and tells you before your users do',
+      points: ['HTTP, keyword, TCP, SSL, domain, DNS and heartbeat monitors', 'Alerts by email, Slack, Teams, Telegram and webhooks', 'Branded public status pages with incidents and maintenance', 'Subscribers and status badges'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'Privacy-first web analytics', area: 'Personal', year: 2026,
+      what: 'Cookieless website analytics with a tiny tracking script',
+      points: ['1.5 KB tracker, no cookies', 'Live dashboard with traffic sources, including AI assistants', 'UTM, country and device reports', 'Goals and custom events'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'Online tools platform', area: 'Personal', year: 2026,
+      what: 'More than 150 image, PDF, text and developer tools in one website',
+      points: ['156 tools that run in the browser', '12 server-side site checkers such as DNS, WHOIS and SSL', 'User accounts, plans and an admin panel', 'Multi-language, including right-to-left'],
+      stack: 'Next.js 16, React 19, Tailwind CSS' },
+    { name: 'Social-proof widgets', area: 'Personal', year: 2026,
+      what: 'Testimonial and recent-activity widgets that any website can embed',
+      points: ['10 widget types with a one-line embed', 'Events from Stripe, WooCommerce and Shopify webhooks', 'Form capture and CSV import'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'AI voice-call agent platform', area: 'Personal', year: 2026,
+      what: 'Voice agents that answer calls from a knowledge base',
+      points: ['Knowledge base the agent answers from', 'Appointment booking during the call', 'Call transcripts'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'Social media scheduler', area: 'Personal', year: 2026,
+      what: 'Plan and approve posts for more than ten social networks',
+      points: ['Queue and calendar for 10+ networks', 'Approval workflow before posts go out'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'Affiliate program platform', area: 'Personal', year: 2026,
+      what: 'Run an affiliate programme with tracking and a partner portal',
+      points: ['Tracking script for referrals', 'Portal where affiliates see clicks and earnings'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'SEO rank tracker and site audit', area: 'Personal', year: 2026,
+      what: 'Tracks search rankings and audits a site for SEO issues',
+      points: ['Keyword rank tracking from search results', 'Site audit with 57 checks'],
+      stack: 'Next.js 16, TypeScript' },
+    { name: 'Pricing analytics for Business Central', area: 'Personal', year: 2026,
+      what: 'Finds better prices from sales history in NAV and Business Central',
+      points: ['Price-elasticity sweet spot', 'What-if price simulation', 'Margin waterfall'],
+      stack: 'JavaScript, Python, SQLite' },
+    { name: 'Cloth-shop billing app', area: 'Personal', year: 2026, proto: true,
+      what: 'Offline Hindi billing for cloth wholesalers and retailers',
+      points: ['GST rate picked by price per piece', 'Broker and transport details on each bill', 'Party ledgers, credit and payments', 'A4 and thermal printing, and WhatsApp share'],
+      stack: 'JavaScript, IndexedDB' },
   ];
 
   const index = document.getElementById('index');
@@ -780,7 +861,7 @@
   index.innerHTML = projects.map((p, i) => `
     <div class="row" data-area="${p.area}">
       <button class="row-btn" type="button" aria-expanded="false" aria-controls="p${i}">
-        <span class="row-name">${esc(p.name)}${p.live ? '<span class="live-tag">Live</span>' : ''}${p.proto ? '<span class="proto-tag">Prototype</span>' : ''}</span>
+        <span class="row-name">${esc(p.name)}${p.live ? '<span class="live-tag">Live</span>' : ''}${p.proto ? '<span class="proto-tag">Prototype</span>' : ''}${p.area === 'Personal' ? '<span class="proto-tag">Personal</span>' : ''}</span>
         <span class="row-what">${esc(p.what)}</span>
         <span class="row-area">${p.area}</span>
         <span class="row-year">${p.year}</span>
