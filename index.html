@@ -486,6 +486,7 @@
             <li><b>Made for the shop floor.</b> Kiosk tablet with face or PIN punch, eSSL/ZKTeco biometrics, RFID access, gate passes, canteen wallets and piece-rate wages.</li>
             <li><b>Mobile in 11 languages.</b> Android apps per product in 10 Indian languages plus English, built with React Native and Expo.</li>
             <li><b>AI on its own server.</b> A self-hosted Qwen assistant that scores résumés, reads receipts, explains payroll changes and drafts help-desk replies.</li>
+            <li><b>AI agents with an approval step.</b> A store of no-code agents for IT and HR work (joiner setup, access requests, leavers, leave cover), a dry-run test, a run log, and an MCP server whose actions wait for approval.</li>
             <li><b>Connects to what companies use.</b> REST API, webhooks, SCIM, SSO/SAML, passkeys, WhatsApp, Slack and Teams bots, and an ERP framework starting with Business Central.</li>
             <li><b>Multi-tenant from day one.</b> Automatic tenant scoping on every query, tenant-to-database routing, read replicas, point-in-time backups and a DR runbook.</li>
             <li><b>Planned for scale.</b> Stateless instances with Redis-backed state, leader locks for jobs, k6 load tests and a capacity plan from 1,000 to 10 crore users.</li>
@@ -780,7 +781,7 @@
       stack: 'Next.js, TypeScript, Express, WebSockets, Baileys, Prisma, Nginx, PM2' },
     { name: 'Vatsin POS', area: 'SaaS', year: 2026, live: 'https://pos.vatsintech.com',
       what: 'Live: offline-first GST point of sale for any Indian store, on web, desktop and mobile',
-      points: ['Billing, inventory, purchases, price lists and promotions', 'Restaurant tables, kitchen display and reservations', 'GST engine with e-invoice and GSTR reports', 'Connectors for Business Central, NetSuite and SAP Business One', 'Keeps billing when the internet drops and syncs later; Windows and Android apps', 'Multi-tenant cloud with row-level security per store'],
+      points: ['Billing, inventory, purchases, price lists and promotions', 'Restaurant tables, kitchen display, reservations and recipes that take stock', 'One order desk with new-order alerts for Swiggy, Zomato, web shop and kiosk orders', 'Several outlets under one GSTIN, each with its own till and kitchen, and stock transfers between them', 'GST engine with e-invoice and GSTR reports', 'Connectors for Business Central, NetSuite and SAP Business One', 'Keeps billing when the internet drops and syncs later; Windows and Android apps', 'Multi-tenant cloud with row-level security per store'],
       stack: 'TypeScript monorepo, Next.js 16, Hono, Drizzle, PostgreSQL, PowerSync, Electron, Capacitor' },
     { name: 'Vatsin IMS', area: 'SaaS', year: 2026, live: 'https://asset.vatsintech.com',
       what: 'Live: multi-tenant IT asset management, from purchase to disposal',
