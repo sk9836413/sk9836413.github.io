@@ -489,6 +489,7 @@
             <li><b>Connects to what companies use.</b> REST API, webhooks, SCIM, SSO/SAML, passkeys, WhatsApp, Slack and Teams bots, and an ERP framework starting with Business Central.</li>
             <li><b>Multi-tenant from day one.</b> Automatic tenant scoping on every query, tenant-to-database routing, read replicas, point-in-time backups and a DR runbook.</li>
             <li><b>Planned for scale.</b> Stateless instances with Redis-backed state, leader locks for jobs, k6 load tests and a capacity plan from 1,000 to 10 crore users.</li>
+            <li><b>Run from two Vatsin-side portals.</b> A NOC/SOC portal for health, alerts, security events and CERT-In reports, and a platform console for every customer company: licences, databases, domains, billing and statutory rules.</li>
             <li><b>Secure by design.</b> 2FA, passkeys, field-level encryption of PII, Azure Key Vault, CSP, a SIEM feed and a NOC/SOC portal with a CERT-In reporting helper.</li>
           </ul>
           <div class="ledger-wrap">
@@ -765,6 +766,14 @@
       what: 'Power BI and web dashboards for a regulatory operations team, built on their Excel trackers',
       points: ['Gap tracker and submissions timeline (Gantt)', 'Turnaround and SLA tracking', 'Write-back to the source Excel files'],
       stack: 'FastAPI, Power BI, DAX' },
+    { name: 'Vatsin Workspace NOC/SOC portal', area: 'SaaS', year: 2026,
+      what: 'The operations and security portal Vatsin uses to run the whole Workspace platform',
+      points: ['Live operations dashboard: app health, uptime, CPU, memory, event-loop lag, API errors, push delivery and background jobs', 'Wall display for the NOC screen: open alerts, requests a minute, p95 latency and 5xx rate', 'SOC view: failed sign-ins and lockouts, new devices or networks, impossible travel, 2FA removed, revoked key use, webhook signature failures and overdue DPDP requests', 'Alert rules with thresholds, windows and severity, maintenance windows and incident posts to a public status page', 'CERT-In incident reports drafted from saved fields, ready to email', 'Platform-wide audit search and a NOC team with IP allow-list, idle sign-out, SSL expiry warnings and alerts by email, Slack, Teams and WhatsApp'],
+      stack: 'Next.js, TypeScript, PostgreSQL, Prisma' },
+    { name: 'Vatsin Workspace platform console', area: 'SaaS', year: 2026,
+      what: 'The control plane Vatsin uses for every customer company on Workspace',
+      points: ['Dashboard of every company: paying companies, monthly revenue, revenue at risk and weekly usage', 'Usage and cost per company, with the margin on each', 'Which database holds each company, read replicas, and moving a company between databases', 'Custom domains per company with DNS checks and automatic TLS', 'On-premise licences: offline files, online activations, check-ins, renewals and AMC', 'Central statutory rules (PF, ESI, professional tax, LWF by state), plans, billing, branding and connectors'],
+      stack: 'Next.js, TypeScript, PostgreSQL, Prisma' },
     { name: 'Vatsin WhatsApp SaaS', area: 'SaaS', year: 2026, live: 'https://whatsapp.vatsintech.com',
       what: 'Live in production: WhatsApp campaigns, OTPs, chatbots and a developer API',
       points: ['In production on its own server, with its first client sending live traffic', 'Businesses connect several WhatsApp numbers by QR and route messages across them', 'Developer REST API for text, media and OTP messages, with per-number API tokens and a playground', 'Chatbots with keyword, welcome and fallback triggers, menus, input flows and signed webhooks', 'Anti-ban engine: number warm-up, per-number pacing, daily limits and atomic credit deduction', 'Wallet billing in INR and USD, CSV/Excel contact import, opt-out handling and a super-admin panel'],
