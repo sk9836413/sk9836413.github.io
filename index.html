@@ -168,6 +168,8 @@
   /* lead case gets the ledger */
   .case.lead { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: clamp(24px, 4vw, 48px); margin-bottom: 24px; }
   .case.lead h3 { font-size: var(--t-2xl); }
+  .apps { list-style: none; margin: -8px 0 28px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .apps li { font-size: var(--t-sm); font-weight: 600; padding: 5px 12px; border: 1.5px solid var(--ink); border-radius: 4px; background: var(--paper); }
   .ledger { width: 100%; border-collapse: collapse; margin: 8px 0 28px; font-variant-numeric: tabular-nums; font-size: var(--t-sm); }
   .ledger caption { text-align: left; font-weight: 650; padding-bottom: 8px; font-size: var(--t-xs); color: var(--ink-soft); }
   .ledger th, .ledger td { padding: 9px 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
@@ -420,7 +422,7 @@
       <ul class="focus four">
         <li>
           <h3>From requirement to design</h3>
-          <p>I run presales demos and requirement gathering for Vatsin and its sister company Bless Tech Solutions. For Vatsin Workspace I turned market research and Indian payroll and labour rules into the scope and architecture of 18 products.</p>
+          <p>I run presales demos and requirement gathering for Vatsin and its sister company Bless Tech Solutions. For Vatsin Workspace I turned market research and Indian payroll and labour rules into the scope and architecture of a bundle of 19 applications.</p>
           <a href="#case-workspace">Vatsin Workspace</a>
         </li>
         <li>
@@ -477,7 +479,8 @@
         </div>
         <div>
           <h3>Vatsin Workspace</h3>
-          <p class="lede">An Indian HR, payroll and workplace suite: 18 products on one employee record, sold one at a time or as 10 industry bundles. Factories are the first market.</p>
+          <p class="lede">One Indian workplace bundle with 19 applications on one employee record and one login. Each app is also sold on its own or in 10 industry bundles. Factories are the first market.</p>
+          <ul class="apps" aria-label="The 19 applications in Vatsin Workspace"><li>HRMS</li><li>Payroll</li><li>Attendance &amp; Leave</li><li>Recruit</li><li>Performance</li><li>LMS</li><li>Expense &amp; Travel</li><li>Contract Labour</li><li>Self Service</li><li>Helpdesk / ITSM</li><li>Asset Manager</li><li>Task Manager</li><li>Visitor Management</li><li>Meeting Rooms</li><li>Canteen</li><li>Access Control</li><li>Safety</li><li>Password Manager</li><li>CRM</li></ul>
           <ul class="points">
             <li><b>Indian payroll built in.</b> PF with the ₹25,000 ceiling, ESI, PT, LWF, TDS under the Income-tax Act 2025, Labour Code registers, gratuity and full-and-final.</li>
             <li><b>Made for the shop floor.</b> Kiosk tablet with face or PIN punch, eSSL/ZKTeco biometrics, RFID access, gate passes, canteen wallets and piece-rate wages.</li>
