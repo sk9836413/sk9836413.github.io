@@ -489,7 +489,7 @@
             <li><b>AI agents with an approval step.</b> A store of no-code agents for IT and HR work (joiner setup, access requests, leavers, leave cover), a dry-run test, a run log, and an MCP server whose actions wait for approval.</li>
             <li><b>Microsoft 365 in the help desk.</b> Posts in a Teams help channel become tickets, the requester's Intune device shows on the ticket, and alerts from Microsoft 365 and Intune can open tickets.</li>
             <li><b>GST e-invoices from the CRM.</b> IRN and e-way bills through the company&#39;s own GSP account, with the QR code on the invoice PDF, and a wizard to switch from HubSpot, Pipedrive or Zoho CRM.</li>
-            <li><b>Connects to what companies use.</b> REST API, webhooks, SCIM, SSO/SAML, passkeys, WhatsApp, Slack and Teams bots, and an ERP framework starting with Business Central.</li>
+            <li><b>Connects to what companies use.</b> REST API, webhooks, SCIM, SSO/SAML, passkeys, WhatsApp, Slack and Teams bots, an ERP framework starting with Business Central, and a connector marketplace that marks each connector as proven, built or not yet tried live.</li>
             <li><b>Multi-tenant from day one.</b> Automatic tenant scoping on every query, tenant-to-database routing, read replicas, point-in-time backups and a DR runbook.</li>
             <li><b>Planned for scale.</b> Stateless instances with Redis-backed state, leader locks for jobs, k6 load tests and a capacity plan from 1,000 to 10 crore users.</li>
             <li><b>Run from two Vatsin-side portals.</b> A NOC/SOC portal for health, alerts, security events and CERT-In reports, and a platform console for every customer company: licences, databases, domains, billing and statutory rules.</li>
@@ -741,6 +741,10 @@
       what: 'Moves users, mailboxes, groups, Teams and SharePoint between tenants',
       points: ['Wizard: pick source, destination and resources, then confirm', 'Per-resource progress with start, pause and cancel, updated every 3 seconds', 'API-first pnpm monorepo: an OpenAPI spec generates typed React Query hooks and Zod schemas'],
       stack: 'React, Vite, Express 5, PostgreSQL, Drizzle ORM, OpenAPI, Orval, TanStack Query' },
+    { name: 'Vatsin Helpdesk for Microsoft 365', area: 'Microsoft 365', year: 2026, dev: true,
+      what: 'An IT service desk that runs entirely inside the client Microsoft 365 tenant, with no extra servers',
+      points: ['Built to a client ITSM design for 50–100 users and 2–3 technicians', 'Incidents and service requests with an impact and urgency matrix, SLA targets and L1/L2/L3 escalation', 'Devices synced from Intune, and Exchange Online, Defender and service-health alerts through read-only Microsoft Graph', 'FAQ publishing with approval, six role-based dashboards and branded Excel and Word reports', '42 Power Automate flows, an idempotent PnP PowerShell installer with rollback, and an optional Teams app, SPFx portal and Power BI report', '188 automated checks, including the flow expressions run against the reference rules'],
+      stack: 'SharePoint Online, Power Automate, PnP PowerShell, Microsoft Graph, SPFx, Teams, Power BI' },
     { name: 'Vatsin Email Marketing', area: 'SaaS', year: 2026, live: 'https://email.vatsintech.com',
       what: 'Live: bulk email outreach that protects deliverability, with a branded mail client',
       points: ['Gmail, Outlook (OAuth) and SMTP senders with warm-up', 'Random send delays, sender rotation and spintax to keep campaigns out of spam', 'Campaign queue, CSV/Excel lists, templates, open and click tracking, and unsubscribe handling', 'Plans, API keys, TOTP MFA and an audit log', 'Built-in Outlook-style mail client on Microsoft 365 and a separate licence portal'],
